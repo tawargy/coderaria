@@ -32,6 +32,26 @@ export type AuthExpressHandler<P, Req, Res> = RequestHandler<
 >;
 
 
+//Posts APIs
+export interface ListPostReq {}
+export interface ListPostRes {
+  data:Post [];
+}
+export type CreatePostReq = Pick<Post, 'title' | 'url'>;
+export interface CreatePostRes {}
+
+export interface GetPostReq {}
+export interface GetPostRes {
+  data: Post;
+}
+
+export interface DeletePostReq {}
+export interface DeletePostRes {}
+
+export interface GetIdParams {
+  id: string;
+}
+
 //Users APIs
 export type SignUpReq = Pick<User, 'email' | 'firstName' | 'lastName' | 'userName' | 'password'>;
 
