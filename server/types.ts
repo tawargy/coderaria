@@ -34,3 +34,7 @@ export interface Comment {
   comment: string;
   postedAt: number;
 }
+
+export interface JwtObject{
+  userId:string
+}
