@@ -3,6 +3,7 @@ import usersRoutes from './routes/usersRoutes'
 import postsRoutes from './routes/postsRoutes'
 import likesRoutes from './routes/likesRoutes'
 import dislikesRoutes from './routes/disLikesRoutes'
+import commentsRoutes from './routes/commentsRoutes'
 const app: express.Application = express()
 
 app.use(express.json())
@@ -19,5 +20,6 @@ app.use('/users', usersRoutes)
 app.use('/posts', postsRoutes)
 app.use('/likes', likesRoutes)
 app.use('/dislikes', dislikesRoutes)
+app.use('/comments', commentsRoutes)
 
 export default app

@@ -65,3 +65,13 @@ export interface SignInReq {
   password: string;
 }
 
+//Comments APIs
+export interface getCommentsRes{
+
+  data:Comment[]
+}
+export interface getCommentsReq{
+
+postId:string
+}
+
