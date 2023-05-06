@@ -1,4 +1,6 @@
 import express, {RequestHandler} from 'express'
+import AppError from './utils/AppError'
+import globalErrorHandler from './middleware/globalErrorHandler'
 import usersRoutes from './routes/usersRoutes'
 import postsRoutes from './routes/postsRoutes'
 import likesRoutes from './routes/likesRoutes'
@@ -21,5 +23,11 @@ app.use('/posts', postsRoutes)
 app.use('/likes', likesRoutes)
 app.use('/dislikes', dislikesRoutes)
 app.use('/comments', commentsRoutes)
+
+app.all('*', (req, res, next) => {
+  next(new AppError(404, `Can't find ${req.originalUrl} on this server!`))
+})
+
+app.use(globalErrorHandler)
 
 export default app
