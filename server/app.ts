@@ -1,6 +1,7 @@
 import express, {RequestHandler} from 'express'
 import usersRoutes from './routes/usersRoutes'
 import postsRoutes from './routes/postsRoutes'
+import likesRoutes from './routes/likesRoutes'
 const app: express.Application = express()
 
 app.use(express.json())
@@ -16,5 +17,6 @@ app.get('/healthz', (req, res) => res.send({status: '✌️'}))
 
 app.use('/users', usersRoutes);
 app.use('/posts', postsRoutes);
+app.use('/likes', likesRoutes);
 
 export default app
