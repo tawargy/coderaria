@@ -19,6 +19,7 @@ export interface Post {
   userLike?:boolean;
   userDislike?:boolean;
   comments?:number;
+  user?:string
 }
 export interface Like {
   userId: string;
