@@ -1,4 +1,5 @@
 import express, {RequestHandler} from 'express'
+import cors from 'cors'
 import AppError from './utils/AppError'
 import globalErrorHandler from './middleware/globalErrorHandler'
 import usersRoutes from './routes/usersRoutes'
@@ -9,6 +10,7 @@ import commentsRoutes from './routes/commentsRoutes'
 const app: express.Application = express()
 
 app.use(express.json())
+app.use(cors())
 
 const logger: RequestHandler = (req, res, next) => {
   console.log('Headers', req.headers)
